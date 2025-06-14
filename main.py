@@ -1,5 +1,10 @@
 import argparse
 from experiment_runner import run_same_story_experiment, run_different_story_experiment
+from dotenv import load_dotenv
+import os
+
+# Load variables from .env into environment
+load_dotenv()
 
 # -----------------------------
 # Argument Parsing

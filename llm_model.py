@@ -9,7 +9,7 @@ from langchain.schema import SystemMessage, HumanMessage, AIMessage, BaseMessage
 # Central Configuration
 # -----------------------------
 config: Dict[str, Any] = {
-    "llm_choice": os.getenv("LLM_CHOICE", "llama"),
+    "llm_choice": os.getenv("LLM_CHOICE", "openai"),
     "llama": {
         "model_name": os.getenv("LLAMA_MODEL_NAME", "meta-llama-3.3-70b-instruct-fp8"),
         "temperature": float(os.getenv("LLAMA_TEMP", 0.6)),
