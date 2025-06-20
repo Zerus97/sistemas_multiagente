@@ -23,13 +23,13 @@ num_rounds_list = [5]  # rounds per game
 endowment_list = [10]
 multiplier_list = [1.5]
 if exp_type in ["same_story", "bad_apple"]:
-    num_games = 100
+    num_games = 2
     if exp_type == "same_story":
-        num_agents_list = [4 , 16 , 32]
+        num_agents_list = [4]#[4 , 16 , 32]
     else:
         num_agents_list = [16]
 elif exp_type == 'different_story':
-    num_games = 400
+    num_games = 99
     num_agents_list = [4]
 
 # -----------------------------
