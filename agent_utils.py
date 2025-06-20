@@ -233,8 +233,10 @@ def run_single_game_random_story(game_index: int, system_prompt_story: str, na: 
     agents = []
 
     # Create agents with random story prompts.
+    stories = list(story_prompts.items())
     for i in range(na):
-        chosen_label, chosen_story = random.choice(list(story_prompts.items()))
+        chosen_label, chosen_story = random.choice(stories)
+        stories.remove((chosen_label, chosen_story))
         # Insert the chosen story into the base system prompt.
         prompt_text = system_prompt_story.replace("STORY", chosen_story)
         agent = Agent(f"Agent_{i+1}", prompt_text, records_file)

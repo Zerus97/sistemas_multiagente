@@ -147,10 +147,11 @@ def plot_violin(df, metric, title, output_pdf, plot_mean_line=True, show_legend=
 if __name__ == "__main__":
     # Define experiment types and file patterns
     CATEGORIES = {
-        "same_story_4_agents": "game_results_same_story_*_ag4_ro5_end10_mult1.5",
-        "same_story_16_agents": "game_results_same_story_*_ag16_ro5_end10_mult1.5",
-        "same_story_32_agents": "game_results_same_story_*_ag32_ro5_end10_mult1.5",
-        "different_story_16_agents": "game_results_different_story_ag16_ro5_end10_mult1.5",
+        "same_story_4_agents": "game_results_same_story_*_ag4_ro5_end10_mult1.5.csv",
+        "same_story_16_agents": "game_results_same_story_*_ag16_ro5_end10_mult1.5.csv",
+        "same_story_32_agents": "game_results_same_story_*_ag32_ro5_end10_mult1.5.csv",
+        "different_story_16_agents": "game_results_different_story_ag16_ro5_end10_mult1.5.csv",
+        "different_story_4_agents": "game_results_different_story_ag4_ro5_end10_mult1.5.csv",
         "bad_apple_16_agents": "game_results_bad_apple_*_ag16_ro5_end10_mult1.5.csv"
     }
 
@@ -161,7 +162,7 @@ if __name__ == "__main__":
             # Different story -> Cumulative Payoff
             csv_files = glob.glob(pattern)
             for csv_file in csv_files:
-                output_file = csv_file.replace("game_results", "cumulative_payoffs").replace(".csv", ".jpg")
+                output_file = csv_file.replace("game_results", "cumulative_payoffs").replace(".csv", ".pdf")
                 df = preprocess_data(pd.read_csv(csv_file), "CumulativePayoff")
 
                 title = f"Heterogenous Experiment"
